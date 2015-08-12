@@ -27,11 +27,19 @@
         .col-md-6
           .form-group
             = f.label :start_at, t('sale_price_start_at')
-            = f.text_field :start_at, class: "datepicker"
+            = f.text_field :start_at, id: 'start_at_datetimepicker'
+            javascript:
+              $(function () {
+                  $('#start_at_datetimepicker').datetimepicker({ format: 'YYYY/MM/DD h:mm a'});
+              });
         .col-md-6
           .form-group
             = f.label :end_at, t('sale_price_end_at')
-            = f.text_field :end_at, class: "datepicker"
+            = f.text_field :end_at, id: 'end_at_datetimepicker'
+            javascript:
+              $(function () {
+                  $('#end_at_datetimepicker').datetimepicker({ format: 'YYYY/MM/DD h:mm a'});
+              });
       .row
         = button Spree.t('actions.create'), 'ok', 'submit', {class: 'btn-success'}
 
